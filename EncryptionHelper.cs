@@ -32,6 +32,7 @@ public static class AESKeyGen
 public static class EncryptionHelper
 {
     private static readonly string _key = GenerateKey();
+    public static string key => _key;
     public static string Encrypt(string input)
     {
         // Get the current date and time in UTC format

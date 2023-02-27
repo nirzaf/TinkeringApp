@@ -9,8 +9,22 @@
 
     <ItemGroup>
       <PackageReference Include="Bogus" Version="34.0.2" />
+      <PackageReference Include="IronPython" Version="3.4.0" />
       <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenApi" Version="1.5.1" />
       <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenApi.Core" Version="1.5.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="sample.py">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Video_Sample_data.xlsx" />
+      <Resource Include="Video_Sample_data.xlsx">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
 </Project>

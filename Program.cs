@@ -5,9 +5,8 @@ using TinkeringApp;
 using static System.Console;
 
 
-string? xInput = ReadLine();
-
-WriteLine(xInput!.IsNotNullOrWhiteSpace() ? "Input is not null or empty" : "Input is null or empty");
+ExecutePython.ReadPythonData();
+return;
 
 var input = "This is the string contains all claims for the user.";
 var encrypted = EncryptionHelper.Encrypt(input);
@@ -15,7 +14,7 @@ var decrypted = EncryptionHelper.Decrypt(encrypted);
 
 WriteLine("Input: " + input);
 WriteLine("Encrypted: " + encrypted);
-WriteLine("Encryption Key: " + EncryptionHelper.key);
+WriteLine("Decryption Key: " + EncryptionHelper.key);
 WriteLine("Decrypted: " + decrypted);
 
 ReadLine();

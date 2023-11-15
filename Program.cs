@@ -2,11 +2,11 @@
 
 //calculate between two points
 
-double lat1 = 52.2296756;
-double lon1 = 21.0122287;
+const double lat1 = 52.2296756;
+const double lon1 = 21.0122287;
 
-double lat2 = 55.406374;
-double lon2 = 16.9251681;
+const double lat2 = 55.406374;
+const double lon2 = 16.9251681;
 
 double distance = CalculateDistance(lat1, lon1, lat2, lon2);
 

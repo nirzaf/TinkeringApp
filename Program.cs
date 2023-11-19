@@ -5,7 +5,7 @@ Console.WriteLine("Enter your marks :");
 
 // generate a fake model of employee using Bogus
 
-var fakeEmployee = new Faker<EmployeeModel>()
+var fakeEmployee = new Faker<Employee>()
     .RuleFor(e => e.FirstName, f => f.Name.FirstName())
     .RuleFor(e => e.LastName, f => f.Name.LastName())
     .RuleFor(e => e.Email, f => f.Internet.Email())

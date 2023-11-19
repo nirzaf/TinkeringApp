@@ -1,34 +1,34 @@
-﻿Console.WriteLine("Enter your marks :");
+﻿using System.Text.Json;
+using Bogus;
 
-//calculate between two points
+Console.WriteLine("Enter your marks :");
 
-const double lat1 = 52.2296756;
-const double lon1 = 21.0122287;
+// generate a fake model of employee using Bogus
 
-const double lat2 = 55.406374;
-const double lon2 = 16.9251681;
+var fakeEmployee = new Faker<EmployeeModel>()
+    .RuleFor(e => e.FirstName, f => f.Name.FirstName())
+    .RuleFor(e => e.LastName, f => f.Name.LastName())
+    .RuleFor(e => e.Email, f => f.Internet.Email())
+    .RuleFor(e => e.PhoneNumber, f => f.Phone.PhoneNumber())
+    .RuleFor(e => e.DateOfBirth, f => f.Date.Past(50, DateTime.Now.AddYears(-18)))
+    .RuleFor(e => e.Position, f => f.Name.JobTitle())
+    .RuleFor(e => e.Salary, f => f.Random.Double(1000, 10000))
+    .RuleFor(e => e.HireDate, f => f.Date.Past(10))
+    .RuleFor(e => e.Location, f => f.Address.City()); 
 
-double distance = CalculateDistance(lat1, lon1, lat2, lon2);
+// assign all fake employee to employee model
 
-Console.WriteLine($"Distance between two points is {distance} meters");
+var employee  = fakeEmployee.Generate();
 
-// show in km
-Console.WriteLine($"Distance between two points is {distance/1000} km");
+//map employee model to employee dto
+
+var employeeDto = employee.MapWithEmployeeDto();
+
+// print employee dto as Json object
+
+var json = JsonSerializer.Serialize(employeeDto, new JsonSerializerOptions { WriteIndented = true });
+
+Console.WriteLine(json);
 
 
-static double CalculateDistance(double lat1, double lon1, double lat2, double lon2) 
-{
-    double R = 6371e3; // Earth's radius in m
-    double φ1 = lat1 * (Math.PI/180); // Convert degrees to radians
-    double φ2 = lat2 * (Math.PI/180);
-    double Δφ = (lat2-lat1) * (Math.PI/180);
-    double Δλ = (lon2-lon1) * (Math.PI/180);
-
-    double a = Math.Sin(Δφ/2) * Math.Sin(Δφ/2) +
-               Math.Cos(φ1) * Math.Cos(φ2) *
-               Math.Sin(Δλ/2) * Math.Sin(Δλ/2);
-    double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1-a));
-
-    double distanceInMeters = R * c;
-    return distanceInMeters;
-}
+    

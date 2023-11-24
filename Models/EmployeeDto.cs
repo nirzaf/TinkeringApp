@@ -1,4 +1,4 @@
-﻿public record EmployeeDto
+﻿public class EmployeeDto
 {
     public int Id { get; set; }
     public string? FirstName { get; set; }

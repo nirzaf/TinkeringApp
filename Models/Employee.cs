@@ -13,21 +13,4 @@ public class Employee
     public double Salary { get; set; }
     public DateTime HireDate { get; set; }
     public string? Location { get; set; }
-
-    public EmployeeDto MapWithEmployeeDto()
-    {
-        return new EmployeeDto
-        {
-            Id = Id,
-            FirstName = FirstName,
-            LastName = LastName,
-            Email = Email,
-            PhoneNumber = PhoneNumber,
-            DateOfBirth = DateOfBirth,
-            Position = Position,
-            Salary = Salary,
-            HireDate = HireDate,
-            Location = Location
-        };
-    }
 }

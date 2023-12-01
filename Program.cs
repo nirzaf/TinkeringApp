@@ -1,14 +1,12 @@
-﻿
-
-using Bogus;
+﻿using Bogus;
 using TinkeringApp.Mappers;
 
 Console.WriteLine("Hello World!");
 
-// generate a Employee object with fake data using Bogus
-
-var employeeFaker = new Faker<Employee>()
-    .RuleFor(e => e.Id, f => f.IndexFaker)
+var employeeFaker = new Faker<Employee>
+    {
+        Locale = "en" 
+    }.RuleFor(e => e.Id, f => f.IndexFaker)
     .RuleFor(e => e.FirstName, f => f.Person.FirstName)
     .RuleFor(e => e.LastName, f => f.Person.LastName)
     .RuleFor(e => e.Email, f => f.Person.Email)
@@ -20,12 +18,9 @@ var employeeFaker = new Faker<Employee>()
     .RuleFor(e => e.Location, f => f.Address.City());
     
     
-var employee = employeeFaker.Generate();
+Employee? employee = employeeFaker.Generate();
 
-//map with employeeDTo
-var employeeDto = EmployeeMapper.ToEmployeeDto(employee);
-
-//print employeeDto
+EmployeeDto employeeDto = EmployeeMapper.ToEmployeeDto(employee);
 
 Console.WriteLine($"Id: {employeeDto.Id}");
 Console.WriteLine($"FirstName: {employeeDto.FirstName}");

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\nirza\\NewRiderProjects\\TinkeringApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F9272874-90D1-467E-92A3-1D23D95F8C43}|TinkeringApp.csproj|c:\\users\\nirza\\newriderprojects\\tinkeringapp\\mappers\\mapemployeewithresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9272874-90D1-467E-92A3-1D23D95F8C43}|TinkeringApp.csproj|solutionrelative:mappers\\mapemployeewithresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F9272874-90D1-467E-92A3-1D23D95F8C43}|TinkeringApp.csproj|c:\\users\\nirza\\newriderprojects\\tinkeringapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9272874-90D1-467E-92A3-1D23D95F8C43}|TinkeringApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +42,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "MapEmployeeWithResponse.cs",
+              "DocumentMoniker": "C:\\Users\\nirza\\NewRiderProjects\\TinkeringApp\\Mappers\\MapEmployeeWithResponse.cs",
+              "RelativeDocumentMoniker": "Mappers\\MapEmployeeWithResponse.cs",
+              "ToolTip": "C:\\Users\\nirza\\NewRiderProjects\\TinkeringApp\\Mappers\\MapEmployeeWithResponse.cs",
+              "RelativeToolTip": "Mappers\\MapEmployeeWithResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-26T18:10:33.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CalculateScore.cs",
               "DocumentMoniker": "C:\\Users\\nirza\\NewRiderProjects\\TinkeringApp\\CalculateScore.cs",
               "RelativeDocumentMoniker": "CalculateScore.cs",
@@ -46,18 +63,17 @@
               "RelativeToolTip": "CalculateScore.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-11-18T07:57:09.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-11-18T07:57:09.91Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\nirza\\NewRiderProjects\\TinkeringApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\nirza\\NewRiderProjects\\TinkeringApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-11-18T07:56:56.457Z",
               "EditorCaption": ""

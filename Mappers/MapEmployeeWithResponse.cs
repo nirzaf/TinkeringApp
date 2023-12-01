@@ -1,4 +1,6 @@
 ﻿
+namespace TinkeringApp.Mappers;
+
 public static class EmployeeMapper
 {
     public static EmployeeDto ToEmployeeDto(Employee employee)

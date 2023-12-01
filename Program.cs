@@ -1,7 +1,8 @@
 ﻿using Bogus;
 using TinkeringApp.Mappers;
+using static System.Console;
 
-Console.WriteLine("Hello World!");
+WriteLine("Hello World!");
 
 var employeeFaker = new Faker<Employee>
     {
@@ -22,14 +23,14 @@ Employee? employee = employeeFaker.Generate();
 
 EmployeeDto employeeDto = EmployeeMapper.ToEmployeeDto(employee);
 
-Console.WriteLine($"Id: {employeeDto.Id}");
-Console.WriteLine($"FirstName: {employeeDto.FirstName}");
-Console.WriteLine($"LastName: {employeeDto.LastName}");
-Console.WriteLine($"Email: {employeeDto.Email}");
-Console.WriteLine($"PhoneNumber: {employeeDto.PhoneNumber}");
-Console.WriteLine($"DateOfBirth: {employeeDto.DateOfBirth}");
-Console.WriteLine($"Position: {employeeDto.Position}");
-Console.WriteLine($"Salary: {employeeDto.Salary}");
-Console.WriteLine($"HireDate: {employeeDto.HireDate}");
-Console.WriteLine($"Location: {employeeDto.Location}");
+WriteLine($"Id: {employeeDto.Id}");
+WriteLine($"FirstName: {employeeDto.FirstName}");
+WriteLine($"LastName: {employeeDto.LastName}");
+WriteLine($"Email: {employeeDto.Email}");
+WriteLine($"PhoneNumber: {employeeDto.PhoneNumber}");
+WriteLine($"DateOfBirth: {employeeDto.DateOfBirth}");
+WriteLine($"Position: {employeeDto.Position}");
+WriteLine($"Salary: {employeeDto.Salary}");
+WriteLine($"HireDate: {employeeDto.HireDate}");
+WriteLine($"Location: {employeeDto.Location}");
 

@@ -18,7 +18,6 @@ var employeeFaker = new Faker<Employee>
     .RuleFor(e => e.HireDate, f => f.Date.Past())
     .RuleFor(e => e.Location, f => f.Address.City());
     
-    
 Employee? employee = employeeFaker.Generate();
 
 EmployeeDto employeeDto = EmployeeMapper.ToEmployeeDto(employee);

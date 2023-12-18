@@ -1,35 +1,37 @@
-﻿using Bogus;
-using TinkeringApp.Mappers;
-using static System.Console;
+﻿using static System.Console;
 
-WriteLine("Hello World!");
+WriteLine("Liq Practice Tasks");
 
-var employeeFaker = new Faker<Employee>
-    {
-        Locale = "en" 
-    }.RuleFor(e => e.Id, f => f.IndexFaker)
-    .RuleFor(e => e.FirstName, f => f.Person.FirstName)
-    .RuleFor(e => e.LastName, f => f.Person.LastName)
-    .RuleFor(e => e.Email, f => f.Person.Email)
-    .RuleFor(e => e.PhoneNumber, f => f.Person.Phone)
-    .RuleFor(e => e.DateOfBirth, f => f.Person.DateOfBirth)
-    .RuleFor(e => e.Position, f => f.Name.JobTitle())
-    .RuleFor(e => e.Salary, f => f.Random.Double(1000, 10000))
-    .RuleFor(e => e.HireDate, f => f.Date.Past())
-    .RuleFor(e => e.Location, f => f.Address.City());
-    
-Employee? employee = employeeFaker.Generate();
+// generate a list of int with 100 elements include negative numbers
+var random = new Random();
+var numbers = new List<int>();
+for (int i = 0; i < 50; i++)
+{
+    numbers.Add(random.Next(-100, 100));
+}
 
-EmployeeDto employeeDto = EmployeeMapper.ToEmployeeDto(employee);
+// 1. find the sum of all numbers using linq
+var sum = numbers.Sum();
+WriteLine($"Sum: {sum}");
 
-WriteLine($"Id: {employeeDto.Id}");
-WriteLine($"FirstName: {employeeDto.FirstName}");
-WriteLine($"LastName: {employeeDto.LastName}");
-WriteLine($"Email: {employeeDto.Email}");
-WriteLine($"PhoneNumber: {employeeDto.PhoneNumber}");
-WriteLine($"DateOfBirth: {employeeDto.DateOfBirth}");
-WriteLine($"Position: {employeeDto.Position}");
-WriteLine($"Salary: {employeeDto.Salary}");
-WriteLine($"HireDate: {employeeDto.HireDate}");
-WriteLine($"Location: {employeeDto.Location}");
+// 2. find all positive numbers
+var positiveNumbers = numbers.Where(n => n > 0);
+int[] enumerable = positiveNumbers as int[] ?? positiveNumbers.ToArray();
+WriteLine($"Positive numbers: {string.Join(", ", enumerable)}");
+
+//number of all positive numbers
+var positiveNumbersCount = enumerable.Length;
+WriteLine($"Positive numbers count: {positiveNumbersCount}");
+
+
+// 3. find all negative numbers
+var negativeNumbers = numbers.Where(n => n < 0);
+int[] enumerable1 = negativeNumbers as int[] ?? negativeNumbers.ToArray();
+WriteLine($"Negative numbers: {string.Join(", ", enumerable1)}");
+
+ReadLine();
+
+
+
+
 

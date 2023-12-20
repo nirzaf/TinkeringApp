@@ -1,4 +1,6 @@
-﻿public class Program
+﻿using static System.Console;
+
+public class Program
 {
     public static void Main(string[] args)
     {
@@ -7,9 +9,10 @@
         var sum = program.SumNumbers(numbers);
         var positiveNumbers = program.FindPositiveNumbers(numbers);
         var negativeNumbers = program.FindNegativeNumbers(numbers);
-        Console.WriteLine($"Sum: {sum}");
-        Console.WriteLine($"Positive numbers: {string.Join(", ", positiveNumbers)}");
-        Console.WriteLine($"Negative numbers: {string.Join(", ", negativeNumbers)}");
+        WriteLine($"Sum: {sum}");
+        WriteLine($"Positive numbers: {string.Join(", ", positiveNumbers)}");
+        WriteLine($"Negative numbers: {string.Join(", ", negativeNumbers)}");
+        ReadLine();
     }
     
     private readonly Random _random = new();

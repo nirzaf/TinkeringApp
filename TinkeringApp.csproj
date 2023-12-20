@@ -11,4 +11,16 @@
       <PackageReference Include="Bogus" Version="34.0.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="TestingTinkeringApp\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="TestingTinkeringApp\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="TestingTinkeringApp\**" />
+    </ItemGroup>
+
 </Project>

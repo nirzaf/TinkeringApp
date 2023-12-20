@@ -1,37 +1,41 @@
-﻿using static System.Console;
-
-WriteLine("Liq Practice Tasks");
-
-// generate a list of int with 100 elements include negative numbers
-var random = new Random();
-var numbers = new List<int>();
-for (int i = 0; i < 50; i++)
+﻿public class Program
 {
-    numbers.Add(random.Next(-100, 100));
+    public static void Main(string[] args)
+    {
+        var program = new Program();
+        var numbers = program.GenerateNumbers(50);
+        var sum = program.SumNumbers(numbers);
+        var positiveNumbers = program.FindPositiveNumbers(numbers);
+        var negativeNumbers = program.FindNegativeNumbers(numbers);
+        Console.WriteLine($"Sum: {sum}");
+        Console.WriteLine($"Positive numbers: {string.Join(", ", positiveNumbers)}");
+        Console.WriteLine($"Negative numbers: {string.Join(", ", negativeNumbers)}");
+    }
+    
+    private readonly Random _random = new();
+
+    public List<int> GenerateNumbers(int count)
+    {
+        var numbers = new List<int>();
+        for (int i = 0; i < count; i++)
+        {
+            numbers.Add(_random.Next(-100, 100));
+        }
+        return numbers;
+    }
+
+    public int SumNumbers(List<int> numbers)
+    {
+        return numbers.Sum();
+    }
+
+    public List<int> FindPositiveNumbers(List<int> numbers)
+    {
+        return numbers.Where(n => n > 0).ToList();
+    }
+
+    public List<int> FindNegativeNumbers(List<int> numbers)
+    {
+        return numbers.Where(n => n < 0).ToList();
+    }
 }
-
-// 1. find the sum of all numbers using linq
-var sum = numbers.Sum();
-WriteLine($"Sum: {sum}");
-
-// 2. find all positive numbers
-var positiveNumbers = numbers.Where(n => n > 0);
-int[] enumerable = positiveNumbers as int[] ?? positiveNumbers.ToArray();
-WriteLine($"Positive numbers: {string.Join(", ", enumerable)}");
-
-//number of all positive numbers
-var positiveNumbersCount = enumerable.Length;
-WriteLine($"Positive numbers count: {positiveNumbersCount}");
-
-
-// 3. find all negative numbers
-var negativeNumbers = numbers.Where(n => n < 0);
-int[] enumerable1 = negativeNumbers as int[] ?? negativeNumbers.ToArray();
-WriteLine($"Negative numbers: {string.Join(", ", enumerable1)}");
-
-ReadLine();
-
-
-
-
-

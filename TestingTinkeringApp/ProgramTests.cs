@@ -4,7 +4,7 @@ namespace TestingTinkeringApp;
 
 public class ProgramTests
 {
-    private Program _program = new();
+    private readonly Program _program = new();
 
     [Fact]
     public void GenerateNumbers_GeneratesCorrectAmountOfNumbers()
